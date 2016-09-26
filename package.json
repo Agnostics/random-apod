@@ -1,7 +1,7 @@
 {
   "name": "random-apod",
   "version": "0.1.0",
-  "homepage": "http://agnostics.github.io/random-apod",
+  "homepage": "https://agnostics.github.io/random-apod/",
   "devDependencies": {
     "autoprefixer": "6.4.1",
     "babel-core": "6.14.0",
