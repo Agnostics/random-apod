@@ -1,0 +1,34 @@
+.button {
+    opacity: 0.4;
+    transition: all 0.2s ease;
+    position: absolute;
+    top: 4%;
+    right: 2%;
+    color: #FAFAFA;
+    font-size: 24px;
+
+    &:hover,
+    &:hover ~ .detail {
+        opacity: 1;
+        cursor: pointer;
+        display: block;
+    }
+}
+
+.detail {
+    display: none;
+    position: absolute;
+    color: #FAFAFA;
+    right: calc(2% + 50px);
+    font-family: monospace;
+    letter-spacing: 2px;
+    font-size: 12px;
+    top: 1%;
+    background-color: rgba(5,5,5,.9);
+    padding: 1%;
+    max-width: 350px;
+
+    li {
+        padding: 2% 0;
+    }
+}

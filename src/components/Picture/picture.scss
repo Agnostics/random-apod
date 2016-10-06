@@ -1,0 +1,11 @@
+.image-contain {
+    width: 100%;
+    height: 100vh;
+    float: right;
+
+    .main-image {
+        width: 100%;
+        height: calc(100% - 50px);
+        object-fit: cover;
+    }
+}

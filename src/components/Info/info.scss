@@ -1,0 +1,30 @@
+.info-contain {
+    background-color: rgba(5,5,5,.9);
+    position: absolute;
+    width: 100%;
+    min-width: 150px;
+    color: #FAFAFA;
+    bottom: 0;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.bar {
+    padding: 0 4%;
+    line-height: 47px;
+    font-family: 'Amatica SC', cursive;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 30px;
+    transition: all 0.5s ease;
+    height: 100%;
+
+    &:hover,
+    &:hover > .info-contain {
+        color: #eb4f87;
+        cursor: pointer;
+    }
+}
