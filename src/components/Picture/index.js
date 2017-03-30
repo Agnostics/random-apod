@@ -1,5 +1,5 @@
 import React from 'react';
-import test from './test.jpg'
+import test from './test2.jpg'
 import './picture.scss';
 
 const Picture = () => {

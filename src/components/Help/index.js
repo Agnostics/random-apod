@@ -9,10 +9,9 @@ const Help = () => {
       </div>
       <div className="detail">
         <ul>
-          Click:
-          <li>image for new random APOD</li>
-          <li>title on the bottom left for more info on the image</li>
-          <li>date on the bottom right to select a certain date</li>
+          <li>Click image for new random APOD</li>
+          <li>Click title on the bottom left for more info on the image</li>
+          <li>Click date on the bottom right to select a certain date</li>
         </ul>
       </div>
     </div>
