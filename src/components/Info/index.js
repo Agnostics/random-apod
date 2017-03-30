@@ -1,21 +1,29 @@
 import React, {Component} from 'react';
 import './info.scss';
+import MoreInfo from '../MoreInfo'
 
 class Info extends Component {
 
-  showInfo () {
-    alert('msg');
-  }
+  constructor(props){
+    super(props);
+    this.state = {open: false}
+    this.toggleMore = this.toggleMore.bind(this);
+}
+
+toggleMore() {
+  console.log("testing");
+     this.setState({ open: !this.state.open });
+ };
 
   render() {
     return (
       <div>
         <div className="info-contain">
-          <div onClick={this.showInfo} id="hover" className="title bar">Layered Butte on Mars</div>
+          <div onClick={this.toggleMore} id="hover" className="title bar">Young Stars and Dusty Nebulae in Taurus</div>
           <div className="date bar">Feb 23, 2007</div>
         </div>
 
-        <div className="more-info-contain"> sdf </div>
+        { this.state.open ? <MoreInfo/> : null }
 
       </div>
     );
