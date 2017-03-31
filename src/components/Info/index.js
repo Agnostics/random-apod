@@ -19,11 +19,11 @@ toggleMore() {
     return (
       <div>
         <div className="info-contain">
-          <div onClick={this.toggleMore} id="hover" className="title bar">Young Stars and Dusty Nebulae in Taurus</div>
+          <div onClick={this.toggleMore} id="hover" className="title bar">{this.props.title}</div>
           <div className="date bar">Feb 23, 2007</div>
         </div>
 
-        { this.state.open ? <MoreInfo/> : null }
+        { this.state.open ? <MoreInfo info={this.props.info}/> : null }
 
       </div>
     );

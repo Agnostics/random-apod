@@ -1,15 +1,14 @@
-import React from 'react';
-import test from './test2.jpg'
+import React, {Component} from 'react';
 import './picture.scss';
 
-const Picture = () => {
-  return (
-    <div className="image-contain">
-      <img className="main-image" alt="test2" src={test}/>
-    </div>
-  );
-};
-
-
+class Picture extends Component {
+  render() {
+    return (
+      <div className="image-contain">
+        <img className="main-image" src={this.props.imgurl}/>
+      </div>
+    );
+  }
+}
 
 export default Picture;
