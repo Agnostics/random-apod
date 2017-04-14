@@ -5,7 +5,7 @@ class Picture extends Component {
   render() {
     return (
       <div className="image-contain">
-        <img className="main-image" src={this.props.imgurl}/>
+        <img className="main-image" role="presentation" src={this.props.imgurl}/>
       </div>
     );
   }

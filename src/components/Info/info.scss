@@ -1,15 +1,20 @@
 .info-contain {
     background-color: rgba(5,5,5,.5);
-    position: absolute;
     width: 100%;
     min-width: 150px;
     color: #FAFAFA;
-    bottom: 0;
     height: 60px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    background-image: none;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: 0 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
 
 .bar {

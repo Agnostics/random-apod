@@ -4,16 +4,19 @@ import MoreInfo from '../MoreInfo'
 
 class Info extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state = {open: false}
+    this.state = {
+      open: false
+    }
     this.toggleMore = this.toggleMore.bind(this);
-}
+  }
 
-toggleMore() {
-  console.log("testing");
-     this.setState({ open: !this.state.open });
- };
+  toggleMore() {
+    this.setState({
+      open: !this.state.open
+    });
+  };
 
   render() {
     return (
@@ -22,9 +25,9 @@ toggleMore() {
           <div onClick={this.toggleMore} id="hover" className="title bar">{this.props.title}</div>
           <div className="date bar">Feb 23, 2007</div>
         </div>
-
-        { this.state.open ? <MoreInfo info={this.props.info}/> : null }
-
+        {this.state.open
+          ? <MoreInfo info={this.props.info}/>
+          : null}
       </div>
     );
   }
