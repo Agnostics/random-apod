@@ -35,7 +35,7 @@ class App extends Component {
     fetch('https://api.nasa.gov/planetary/apod?api_key=YjgpSkeJQNmnf116wdDv1BJTZwH71uH0U72S3JHb').then((response) => {
       return response.json()
     }).then((json) => {
-      this.setState({img: json.url, title: json.title, info: json.explanation, date: formatedNow});
+      this.setState({img: json.hdurl, title: json.title, info: json.explanation, date: formatedNow});
 
     }).catch((ex) => {
       console.log('parsing failed', ex)
@@ -45,7 +45,6 @@ class App extends Component {
 
   imgLoaded() {
     this.setState({isFetching: false});
-    console.log("LOADED");
   }
 
   toggleMore() {
@@ -67,10 +66,16 @@ class App extends Component {
     const now = date._d.toString().split(" ");
     const formatedNow = now[1] + " " + now[2] + ", " + now[3];
 
+    let intElemClientWidth = document.documentElement.clientWidth;
+
     fetch(url).then((response) => {
       return response.json()
     }).then((json) => {
-      this.setState({img: json.hdurl, title: json.title, info: json.explanation, date: formatedNow});
+      if(intElemClientWidth < 1024) {
+        this.setState({img: json.url, title: json.title, info: json.explanation, date: formatedNow});
+      } else{
+        this.setState({img: json.hdurl, title: json.title, info: json.explanation, date: formatedNow});
+      }
     }).catch((ex) => {
       console.log('parsing failed', ex)
     });
@@ -94,15 +99,19 @@ class App extends Component {
     const month = dateArray[0];
 
     const randomDate = year + "-" + month + "-" + day;
-
     const formatedDate = formatDate(day, month, year);
-
     const url = "https://api.nasa.gov/planetary/apod?api_key=YjgpSkeJQNmnf116wdDv1BJTZwH71uH0U72S3JHb&hd=true&date=" + randomDate;
 
+
+    let intElemClientWidth = document.documentElement.clientWidth;
     fetch(url).then((response) => {
       return response.json()
     }).then((json) => {
-      this.setState({img: json.hdurl, title: json.title, info: json.explanation, date: formatedDate});
+      if(intElemClientWidth < 1024) {
+        this.setState({img: json.url, title: json.title, info: json.explanation, date: formatedDate});
+      } else{
+        this.setState({img: json.hdurl, title: json.title, info: json.explanation, date: formatedDate});
+      }
     }).catch((ex) => {
       console.log('parsing failed', ex)
     });
