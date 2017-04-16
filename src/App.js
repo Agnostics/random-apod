@@ -80,9 +80,6 @@ class App extends Component {
       console.log('parsing failed', ex)
     });
 
-
-
-
     this.setState({calendar: date, date: formatedNow})
     this.toggleDate()
   }
@@ -122,7 +119,8 @@ class App extends Component {
       <div className="container">
         <Help />
         <div className="info-contain">
-          <div onClick={this.toggleMore} id="hover" className="title bar">{this.state.title}</div>
+          <div onClick={this.toggleMore} id="hover" className="title bar">{this.state.title} </div>
+          <a download href={this.state.img} className="dwn ion-ios-cloud-download-outline" aria-hidden="true"></a>
           {this.state.picker && (
             <DatePicker
                 selected={this.state.calendar}
